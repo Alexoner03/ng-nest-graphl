@@ -1,0 +1,5 @@
+mutation createBook($bookBody: BookCreateDTO!){
+  createBook(book : $bookBody){
+    id
+  }
+}

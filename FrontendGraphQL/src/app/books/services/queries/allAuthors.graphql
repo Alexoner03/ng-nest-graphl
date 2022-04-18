@@ -1,0 +1,10 @@
+query listAllAuthors {
+  listAllAuthors {
+    id,
+    name,
+    books {
+      id,
+      title
+    }
+  }
+}

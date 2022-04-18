@@ -1,0 +1,24 @@
+<section class="container">
+  <h1>
+    Create Book
+  </h1>
+  <div class="mb-8">
+    <p-button label="Go to List"></p-button>
+  </div>
+
+  <form action="" [formGroup]="formBook" (submit)="sendForm()" >
+    <span class="p-float-label p-fluid mb-4">
+      <input id="title" type="text" pInputText formControlName="title">
+      <label for="title">Title</label>
+    </span>
+
+    <span class="p-float-label p-fluid mb-4" formGroupName="author">
+      <p-dropdown [options]="authors" formControlName="id" optionLabel="name" optionValue="id" id="authors"></p-dropdown>
+      <label for="authors">Select an author</label>
+    </span>
+
+    <p-button label="Save" type="submit"></p-button>
+
+  </form>
+
+</section>

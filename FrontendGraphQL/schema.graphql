@@ -1,0 +1,39 @@
+type Author {
+  id: Float!
+  name: String!
+  books: [Book!]!
+}
+
+type Book {
+  id: Float!
+  title: String!
+  author: Author!
+}
+
+type Query {
+  listAllBooks: [Book!]!
+  listAllAuthors: [Author!]!
+}
+
+type Mutation {
+  createBook(book: BookCreateDTO!): Book!
+  createAuthor(author: AuthorCreateDTO!): Author!
+}
+
+input BookCreateDTO {
+  title: String!
+  author: AuthorBookCreateDTO!
+}
+
+input AuthorBookCreateDTO {
+  id: Float!
+}
+
+input AuthorCreateDTO {
+  name: String!
+  books: [BookAuthorCreateDTO!]
+}
+
+input BookAuthorCreateDTO {
+  title: String!
+}

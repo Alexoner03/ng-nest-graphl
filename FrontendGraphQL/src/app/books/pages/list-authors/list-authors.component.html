@@ -1,0 +1,22 @@
+<section class="container">
+  <div class="mb-4">
+    <p-button label="Add Author" [routerLink]="['/authors/create']"></p-button>
+  </div>
+
+  <p-table [value]="authors" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Books</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-author>
+      <tr>
+        <td>{{author.id}}</td>
+        <td>{{author.name}}</td>
+        <td>{{author.books?.length}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</section>

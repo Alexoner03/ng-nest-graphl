@@ -1,0 +1,29 @@
+<section class="container">
+  <h1>
+    Create Author
+  </h1>
+  <div class="mb-8">
+    <p-button label="Go to List"></p-button>
+  </div>
+
+  <form action="" [formGroup]="formBook" (submit)="sendForm()" >
+    <span class="p-float-label p-fluid mb-4">
+      <input id="name" type="text" pInputText formControlName="name">
+      <label for="name">Name</label>
+    </span>
+
+    <span class="p-float-label p-fluid mb-4">
+      <p-chips id="txtBooks" class="w-full block" (onAdd)="addBook($event)">
+        <ng-template let-item pTemplate="item">
+          {{item}} <i class="pi pi-book"></i>
+        </ng-template>
+      </p-chips>
+      <label for="txtBooks">Books (Write a name and press Enter)</label>
+    </span>
+
+    <p-button label="Save" type="submit"></p-button>
+
+  </form>
+
+</section>
+

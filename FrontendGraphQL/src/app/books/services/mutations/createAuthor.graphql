@@ -1,0 +1,5 @@
+mutation createAuthor($authorBody: AuthorCreateDTO!){
+  createAuthor(author : $authorBody){
+    id
+  }
+}
